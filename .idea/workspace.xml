@@ -20,10 +20,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="csc112-project" />
+      <option name="PROGRAM_PARAMETERS" value="1 3 12" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -51,7 +52,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Compound.src" />
       <item itemvalue="Groovy.Unnamed" />
       <item itemvalue="Java Scratch.Unnamed" />

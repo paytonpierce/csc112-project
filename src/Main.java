@@ -7,6 +7,7 @@ public class Main {
 
         int subtotal = 0;
         double salesTax = 0;
+        double total = 0;
 
         System.out.println("Welcome to Payton's shop!\n============Menu:=============");
         System.out.println("1. Milk: $5 \t 6. Ham: $3");
@@ -23,24 +24,25 @@ public class Main {
                 Arrays.asList(5,2,8,6,4,3,4,3,3,6)
         );
 
-        //input: 1 3 5 7
-
-        ArrayList<Integer> request = new ArrayList<Integer>(
-                Arrays.asList(1,3,5,7)
-        );
-
-        for(int i = 0; i < request.size(); i++) {
-            if (request.get(i) < items.size()) {
-                subtotal = subtotal + prices.get(i);
-            } else {
-                break;
+        for(int i = 0; i < args.length; i++) {
+            try{
+                subtotal = subtotal + prices.get(Integer.parseInt(args[i]));
+            }
+            catch(IndexOutOfBoundsException e){
+                System.out.println("Item " + args[i] + " does not exist. please choose a number 1-10. Cancelling order.");
+                System.exit(1);
+            }
+            catch(NumberFormatException n){
+                System.out.println("You must input the items in number form. \"" + args[i] + "\" is not an acceptable input. Cancelling order.");
+                System.exit(1);
             }
         }
 
         salesTax = subtotal * (0.05);
+        total = subtotal + salesTax;
 
-        System.out.println("Subtotal: " + subtotal);
-        System.out.println("Sales tax: " + salesTax);
-        System.out.println("Total: " + (subtotal + salesTax));
+        System.out.println("Subtotal: \t" + subtotal);
+        System.out.printf("Sales tax: \t%.2f\n", salesTax);
+        System.out.printf("Total: \t\t%.2f\n", total);
     }
 }
